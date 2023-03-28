@@ -30,10 +30,10 @@ function displayEvents() {
             event.description = "No description Provided"
         }
         let eventDate = new Date(event.start.dateTime)
+        let eventEnd = new Date(event.end.dateTime)
         let node = document.createElement("div")
         node.classList.add("calendarEvent")
-        if (isNaN(eventDate)) console.log(event.start.dateTime)
-        node.innerHTML = `<h1>${event.summary}</h1><h3>${eventDate.toLocaleString('default', { month: 'short' }).toUpperCase()} ${eventDate.getDate()}, ${eventDate.getFullYear()}</h3><p>${event.description}</p>`
+        node.innerHTML = `<div class="calendarDate"><span class="calendarMonth">${eventDate.toLocaleString('default', { month: 'short' }).toUpperCase()}</span><span class="calendarDay">${eventDate.getDate()}</span></div><h1 class="calendarTitle">${event.summary}</h1><span class="calendarDetails">${eventDate.toLocaleString('en-US', { timeStyle: 'short', hour12: true})} to ${eventEnd.toLocaleString('en-US', { timeStyle: 'short', hour12: true})}`
         if (event.link != undefined) node.innerHTML += `<a href=${event.link} target="_blank" rel="noreferer noopener"><button>See Event &rarr;</button></a>`
         rootDiv.appendChild(node)
     });

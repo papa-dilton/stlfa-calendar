@@ -85,12 +85,18 @@
     font-weight: bold;
     margin-bottom: 10px;
   }
+
+  .calendarDetails {
+    color: black;
+    font-size: 1.2rem;
+  }
   
   /* Event Description */
+  /*
   .calendarDescription {
     font-size: 1.4rem;
     line-height: 1.6;
-  }
+  } */
   
   .calendarEvent button {
     background-color: var(--primary-color);

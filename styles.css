@@ -40,8 +40,7 @@
   /* Single event container */
   .calendarEvent {
     background-color: #fff;
-    /*border: 2px solid #e0504c;*/
-    padding: 20px;
+    padding: 15px;
     font-family: var(--main-font), sans-serif;
     height: fit-content;
     margin: 20px;
@@ -87,22 +86,32 @@
   }
 
   .calendarDetails {
-    color: black;
+    color: #444;
     font-size: 1.2rem;
+    display: flex;
+    flex-direction: column;
   }
-  
-  /* Event Description */
-  /*
-  .calendarDescription {
-    font-size: 1.4rem;
-    line-height: 1.6;
-  } */
+
+  .locationIcon path, .timeIcon path {
+    fill: #444;
+  }
+
+  .locationIcon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
+
+  .timeIcon {
+    width: 1.2rem;
+    height: 1.2rem;
+  }
   
   .calendarEvent button {
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 7px 15px;
+    margin: 10px 0;
     font-size: 0.9rem;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
@@ -116,9 +125,27 @@
   
   /* Navigation */
   #cal-nav {
-    margin-top: 20px;
-    display: flex;
-    justify-content: space-between;
+    display: none;
+    align-items: center;
+  }
+
+  #cal-nav-page {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+    padding: 16.5px 15px;
+    border: var(--secondary-color) 4px solid;
+    text-align: center;
+  }
+
+  #cal-nav button:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  #cal-nav button:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
   
   #cal-nav button {
@@ -126,7 +153,7 @@
     background-color: var(--primary-color);
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 20px 15px;
     border-radius: 0;
     font-size: 1.5rem;
     transition: all 0.3s ease-in-out;
